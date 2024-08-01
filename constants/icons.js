@@ -12,7 +12,7 @@ import eyeHide from "../assets/icons/eye-hide.png";
 import eye from "../assets/icons/eye.png";
 import play from "../assets/icons/play.png";
 
-export {
+export default {
   play,
   bookmark,
   home,

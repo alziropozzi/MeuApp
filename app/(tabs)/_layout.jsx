@@ -11,7 +11,6 @@ const TabIcon = ({ icon, color, name, focused }) => {
         resizeMode="contain"
         tintColor={color}
         className="w-6 h-6"
-        style={{width:100, height:100}}
       />
       <Text className={`${focused ? 'font-psemibold' : 'font-pregular'} text-xs`} style={{ color: color}}>
         {name}
@@ -21,6 +20,7 @@ const TabIcon = ({ icon, color, name, focused }) => {
 }
 
 const TabsLayout = () => {
+
   return (
     <>
       <Tabs
@@ -38,7 +38,7 @@ const TabsLayout = () => {
       >
         <Tabs.Screen 
           name="home"
-          opotions={{
+          options={{
             title:'Home',
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
@@ -53,7 +53,7 @@ const TabsLayout = () => {
         />
         <Tabs.Screen 
           name="bookmark"
-          opotions={{
+          options={{
             title:'Bookmark',
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
@@ -68,7 +68,7 @@ const TabsLayout = () => {
         />
         <Tabs.Screen 
           name="create"
-          opotions={{
+          options={{
             title:'Create',
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
@@ -83,12 +83,12 @@ const TabsLayout = () => {
         />
         <Tabs.Screen 
           name="profile"
-          opotions={{
+          options={{
             title:'Profile',
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon 
-                icon={icons.icons.profile}
+                icon={icons.profile}
                 color={color}
                 name="Profile"
                 focused={focused}
