@@ -26,16 +26,17 @@ const SignUp = () => {
     setIsSubmitting(true);
     try {
       const result = await createUser(form.email, form.password, form.ussername);
+      setUser(result);
+      setIslogged(true);
 
-      //set it to global state...
 
-      router.replace('/home');
+      router.replace("/home");
     } catch (error) {
       Alert.alert('Error', error.message);
     } finally {
       setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <SafeAreaView className="bg-primary h-full">

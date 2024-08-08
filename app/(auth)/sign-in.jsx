@@ -15,27 +15,30 @@ const SignIn = () => {
     email: '', 
     password: ''
   })
-  const [isSubmitting, setisSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const submit = async () =>{
     if(form.email === "" || form.password === ""){
       Alert.alert('Error', 'Please fill in all the fields');
+      return;
     }
 
     setIsSubmitting(true);
 
     try {
       await signIn(form.email, form.password);
+      const result = await getCurrentUser();
+      setUser(result);
+      setIsLogged(true);
 
-      //set it to global state...
-      
+      Alert.alert("Success", "User signed in successfully");
       router.replace('/home');
     } catch (error) {
       Alert.alert('Error', error.message); 
     } finally {
       setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <SafeAreaView className="bg-primary h-full">
