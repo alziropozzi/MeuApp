@@ -8,7 +8,7 @@ export const useGlobalContext = () => useContext (GlobalContext);
 const GlobalProvider = ({ children }) => {
     const [isLogged, setIsLogged] = useState(false);
     const [user, setUser] = useState(null);
-    const [isLoading, setisLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() =>{
         getCurrentUser()
@@ -25,7 +25,7 @@ const GlobalProvider = ({ children }) => {
             console.log(error);
         })
         .finally(() =>{
-            setisLoading(false)
+            setIsLoading(false)
         })
     }, []);
 
